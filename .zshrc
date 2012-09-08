@@ -36,7 +36,14 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
+# System aliases
 alias ls='ls --color=auto -h'
+alias grep='grep --color=auto'
+
+# Android related aliases
+alias alog='adb logcat'
+alias alogs='adb logcat -s'
+alias als='adb shell ls -la'
 
 source $HOME/.profile
 
