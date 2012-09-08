@@ -38,9 +38,5 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 alias ls='ls --color=auto -h'
 
-export TOOLS_BIN=~/Tools/bin
-export JDK_HOME=~/Tools/jdk1.7.0_05
-export ECLIPSE_HOME=~/Tools/eclipse
-export SBT_HOME=~/Tools/sbt
-export PATH=$SBT_HOME/bin:$TOOLS_BIN:$ECLIPSE_HOME:$JDK_HOME/bin:$PATH
+source $HOME/.profile
 
