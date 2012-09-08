@@ -1,3 +1,8 @@
+# Enable 256 color in term
+if [ -n "$DISPLAY" -a "$TERM" = "xterm" ] ; then
+    export TERM="xterm-256color"
+fi
+
 # Add folder for misc utils to $PATH
 if [ -d "$HOME/Tools/bin" ] ; then
     PATH="$HOME/Tools/bin:$PATH"
