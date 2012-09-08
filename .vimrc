@@ -7,6 +7,8 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-fugitive'
+Bundle 'L9'
+Bundle 'FuzzyFinder'
 Bundle 'millermedeiros/vim-statline'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'sjbach/lusty'
@@ -16,6 +18,7 @@ Bundle 'gregsexton/VimCalc'
 Bundle 'ervandew/supertab'
 Bundle 'Lucius'
 Bundle 'jimenezrick/vimerl'
+Bundle 'vimoutliner/vimoutliner'
 
 filetype plugin indent on
 
