@@ -37,13 +37,34 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # System aliases
-alias ls='ls --color=auto -h'
 alias grep='grep --color=auto'
+alias ll='ls -la -h --color=auto'
+alias ls='ls --color=auto -h'
 
 # Android related aliases
 alias alog='adb logcat'
 alias alogs='adb logcat -s'
 alias als='adb shell ls -la'
+
+# Git related aliases
+alias ga='git add'
+alias gb='git branch'
+alias gc='git checkout'
+alias gcm='git commit'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gf='git fetch'
+alias gfp='git fetch -p'
+alias gl='git log'
+alias gm='git merge'
+alias gp='git push'
+alias gr='git rebase'
+alias gres='git reset'
+alias grev='git revert'
+alias gs='git status'
+alias gsh='git show'
+alias gsub='git submodule'
+alias gsubu='git submodule update'
 
 source $HOME/.profile
 
