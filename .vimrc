@@ -10,7 +10,6 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'millermedeiros/vim-statline'
-Bundle 'fholgado/minibufexpl.vim'
 Bundle 'sjbach/lusty'
 Bundle 'xolox/vim-session'
 Bundle 'Rip-Rip/clang_complete'
@@ -61,3 +60,8 @@ let g:clang_close_preview = 1
 let g:clang_complete_macros = 1
 let g:clang_complete_patterns = 1
 set completeopt=menu,longest
+
+let mapleader=","
+
+map <Leader>be <Esc>:LustyBufferExplorer<Enter>
+map <Leader>bg <Esc>:LustyBufferGrep<Enter>
