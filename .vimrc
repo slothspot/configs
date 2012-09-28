@@ -63,5 +63,8 @@ set completeopt=menu,longest
 
 let mapleader=","
 
-map <Leader>be <Esc>:LustyBufferExplorer<Enter>
-map <Leader>bg <Esc>:LustyBufferGrep<Enter>
+nmap <Leader>be :LustyBufferExplorer<CR>
+nmap <Leader>bg :LustyBufferGrep<CR>
+
+nmap <Leader>l :set list!<CR>
+set listchars=tab:▸\ ,eol:¬
