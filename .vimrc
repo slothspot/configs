@@ -18,6 +18,7 @@ Bundle 'ervandew/supertab'
 Bundle 'Lucius'
 Bundle 'jimenezrick/vimerl'
 Bundle 'vimoutliner/vimoutliner'
+Bundle 'derekwyatt/vim-scala'
 
 filetype plugin indent on
 
