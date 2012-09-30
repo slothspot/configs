@@ -19,6 +19,7 @@ Bundle 'Lucius'
 Bundle 'jimenezrick/vimerl'
 Bundle 'vimoutliner/vimoutliner'
 Bundle 'derekwyatt/vim-scala'
+Bundle 'plasticboy/vim-markdown'
 
 filetype plugin indent on
 
