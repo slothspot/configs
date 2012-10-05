@@ -71,3 +71,5 @@ nmap <Leader>bg :LustyBufferGrep<CR>
 
 nmap <Leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
+
+nmap <Leader>a ggVG
