@@ -20,6 +20,7 @@ Bundle 'jimenezrick/vimerl'
 Bundle 'vimoutliner/vimoutliner'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'plasticboy/vim-markdown'
+Bundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on
 
