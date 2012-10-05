@@ -73,3 +73,5 @@ nmap <Leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
 nmap <Leader>a ggVG
+
+autocmd BufReadPost * if line("'\"") <= line("$") | exe "normal! g`\"" | endif
