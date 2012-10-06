@@ -37,8 +37,7 @@ set hidden
 syntax enable
 set t_Co=256
 set background=dark
-colorscheme lucius
-LuciusDark
+colorscheme solarized
 
 set guioptions=acig
 set clipboard=unnamed
