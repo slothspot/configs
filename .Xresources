@@ -1,5 +1,5 @@
 URxvt.scrollBar: false
-URxvt.font: xft:Ubuntu Mono:size=10
+URxvt.font: xft:Droid Sans Mono:size=10
 URxvt*termName: xterm-256color
 URxvt.perl-ext-common: default
 URxvt.tabbed.tabbar-fg: 2
