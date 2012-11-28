@@ -9,7 +9,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-fugitive'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
-Bundle 'millermedeiros/vim-statline'
+"Bundle 'millermedeiros/vim-statline'
 Bundle 'sjbach/lusty'
 Bundle 'xolox/vim-session'
 Bundle 'Rip-Rip/clang_complete'
@@ -21,6 +21,7 @@ Bundle 'vimoutliner/vimoutliner'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'Lokaltog/vim-powerline'
 
 filetype plugin indent on
 
