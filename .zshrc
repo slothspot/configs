@@ -36,6 +36,10 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+fpath=($HOME/.zsh/completions $fpath)
+autoload -U compinit
+compinit
+
 setopt histignorealldups sharehistory complete_in_word autocd
 
 # Use emacs keybindings even if our EDITOR is set to vi
