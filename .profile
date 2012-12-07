@@ -9,9 +9,9 @@ if [ -d "$HOME/Tools/bin" ] ; then
 fi
 
 #Add JDK home to path
-if [ -d "$HOME/Tools/jdk1.7.0_07" ] ; then
-    export JDK_HOME="$HOME/Tools/jdk1.7.0_07"
-    PATH="$HOME/Tools/jdk1.7.0_07/bin:$PATH"
+if [ -d "$HOME/Tools/jdk1.7.0_09" ] ; then
+    export JDK_HOME="$HOME/Tools/jdk1.7.0_09"
+    PATH="$HOME/Tools/jdk1.7.0_09/bin:$PATH"
 fi
 
 #Add Eclipse home to path
@@ -41,6 +41,13 @@ fi
 if [ -d "$HOME/Tools/ocaml" ] ; then
     OCAML_HOME="$HOME/Tools/ocaml"
     PATH="$OCAML_HOME/bin:$PATH"
+fi
+
+#Add Clang/LLVM to path
+if [ -d "$HOME/Tools/llvm" ]; then
+    LLVM_HOME="$HOME/Tools/llvm"
+    CLANG_HOME="$HOME/Tools/llvm"
+    PATH="$CLANG_HOME/bin:$PATH"
 fi
 
 export PATH="$PATH"
