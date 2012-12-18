@@ -83,3 +83,5 @@
 
 XTerm*font: -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso10646-1
 XTerm*faceName: Droid Sans Mono:pixelsize=12
+XTerm*fastScroll: true
+XTerm*jumpScroll: true
