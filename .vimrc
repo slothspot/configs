@@ -62,6 +62,7 @@ let g:clang_periodic_quickfix = 1
 let g:clang_close_preview = 1
 let g:clang_complete_macros = 1
 let g:clang_complete_patterns = 1
+let g:clang_use_library = 1
 set completeopt=menu,longest
 
 let mapleader=","
