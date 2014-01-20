@@ -9,7 +9,6 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
 Bundle 'L9'
-Bundle 'FuzzyFinder'
 Bundle 'sjbach/lusty'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-session'
@@ -52,6 +51,7 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set nobackup
+set backspace=2
 
 set foldmethod=indent
 
