@@ -38,6 +38,7 @@ syntax enable
 set t_Co=256
 set background=light
 colorscheme solarized
+set guifont=Anonymous\ Pro\ 12
 
 set guioptions=acig
 set clipboard=unnamed
