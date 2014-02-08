@@ -124,7 +124,10 @@ bar {
 
 # startup
 exec gnome-terminal
-exec deadbeef
+exec firefox
+
+# enable US/RU keyboard layout switching
+exec setxkbmap -model hhk -layout us,ru -option grp:caps_toggle
 
 # matching
 assign [class="Gnome-terminal"] $ws1
