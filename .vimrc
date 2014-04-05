@@ -4,10 +4,12 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-sensible'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
+Bundle 'airblade/vim-gitgutter'
 Bundle 'L9'
 Bundle 'sjbach/lusty'
 Bundle 'xolox/vim-misc'
@@ -17,6 +19,7 @@ Bundle 'Lucius'
 Bundle 'jimenezrick/vimerl'
 Bundle 'vimoutliner/vimoutliner'
 Bundle 'derekwyatt/vim-scala'
+Bundle 'ktvoelker/sbt-vim'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
@@ -52,6 +55,7 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set nobackup
+set nowb
 set backspace=2
 
 set foldmethod=indent
@@ -73,3 +77,11 @@ autocmd BufReadPost * if line("'\"") <= line("$") | exe "normal! g`\"" | endif
 let g:session_autosave = 'no'
 
 let g:EclimCompletionMethod = 'omnifunc'
+
+set autoread
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
+set noswapfile
