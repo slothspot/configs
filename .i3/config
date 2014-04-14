@@ -70,18 +70,21 @@ bindsym $mod+a focus parent
 
 # workspaces
 set $ws1 1: Term
-set $ws2 2: Media
-set $ws3 3: Other
+set $ws2 2: Dev
+set $ws3 3: Media
+set $ws4 4: Other
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
 
 # move focused container to workspace
 bindsym $mod+Shift+exclam move container to workspace $ws1
 bindsym $mod+Shift+at move container to workspace $ws2
 bindsym $mod+Shift+numbersign move container to workspace $ws3
+bindsym $mod+Shift+dollar move container to workspace $ws4
 
 # reload the configuration file
 bindsym $mod+Shift+C reload
@@ -132,8 +135,9 @@ exec setxkbmap -model hhk -layout us,ru -option grp:caps_toggle
 # matching
 assign [class="Gnome-terminal"] $ws1
 assign [class="Gvim"] $ws1
+assign [class="jetbrains-idea-ce"] $ws2
 
-assign [class="Deadbeef"] $ws2
-assign [class="Opera"] $ws2
+assign [class="Deadbeef"] $ws3
+assign [class="Firefox"] $ws3
 
 for_window [class="MPlayer"] floating enable
