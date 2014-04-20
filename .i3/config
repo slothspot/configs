@@ -26,8 +26,11 @@ bindsym $mod+l exec i3lock -c 000000
 # kill focused window
 bindsym $mod+Shift+Q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+# start rofi (a program launcher and window switcher)
+# rofi in run-dialog mode
+bindsym $mod+d exec rofi -rnow
+# rofi in window mode
+bindsym $mod+Tab exec rofi -now
 
 # change focus
 bindsym $mod+Left focus left
