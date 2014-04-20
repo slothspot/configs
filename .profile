@@ -9,9 +9,9 @@ if [ -d "$HOME/Tools/bin" ] ; then
 fi
 
 #Add JDK home to path
-if [ -d "$HOME/Tools/jdk1.7.0_09" ] ; then
-    export JDK_HOME="$HOME/Tools/jdk1.7.0_09"
-    PATH="$HOME/Tools/jdk1.7.0_09/bin:$PATH"
+if [ -d "$HOME/Tools/jdk1.7.0_51" ] ; then
+    export JDK_HOME="$HOME/Tools/jdk1.7.0_51"
+    PATH="$HOME/Tools/jdk1.7.0_51/bin:$PATH"
 fi
 
 #Add Eclipse home to path
