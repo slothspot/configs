@@ -41,6 +41,7 @@ autoload -U compinit
 compinit
 
 setopt histignorealldups sharehistory complete_in_word autocd
+unsetopt nomatch
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
