@@ -23,6 +23,10 @@ Bundle 'plasticboy/vim-markdown'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
 Bundle 'Valloric/YouCompleteMe'
+if has("macunix")
+    Bundle 'rizzatti/funcoo.vim'
+    Bundle 'rizzatti/dash.vim'
+endif
 
 filetype plugin indent on
 
