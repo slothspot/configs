@@ -28,6 +28,7 @@ if has("macunix")
     Plugin 'rizzatti/funcoo.vim'
     Plugin 'rizzatti/dash.vim'
 endif
+Plugin 'whatyouhide/vim-gotham'
 
 filetype plugin indent on
 
@@ -43,8 +44,9 @@ set hidden
 
 syntax enable
 set t_Co=256
-set background=light
-colorscheme solarized
+"set background=light
+"colorscheme solarized
+colorscheme gotham
 set guifont=Anonymous\ Pro\ 12
 
 set guioptions=acig
@@ -92,3 +94,4 @@ set noswapfile
 
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
+let g:airline_theme='gotham'
