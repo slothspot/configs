@@ -3,32 +3,41 @@ filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
+" General
 Plugin 'gmarik/vundle'
 Plugin 'tpope/vim-sensible'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'sjbach/lusty'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
-Plugin 'gregsexton/VimCalc'
-Plugin 'Lucius'
-Plugin 'jimenezrick/vimerl'
+Plugin 'bling/vim-airline'
+
 Plugin 'vimoutliner/vimoutliner'
+
+" Programming
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'derekwyatt/vim-scala'
-Plugin 'ktvoelker/sbt-vim'
+
+" Markdown
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+
+" Git
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+
+" Themes
+Plugin 'Lucius'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'bling/vim-airline'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'whatyouhide/vim-gotham'
+
+" OSX specific
 if has("macunix")
     Plugin 'rizzatti/funcoo.vim'
     Plugin 'rizzatti/dash.vim'
 endif
-Plugin 'whatyouhide/vim-gotham'
 
 filetype plugin indent on
 
