@@ -63,6 +63,7 @@ set clipboard=unnamed
 
 autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+nmap <F9> :NERDTreeToggle<CR>
 
 set expandtab
 set smartindent
