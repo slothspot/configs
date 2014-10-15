@@ -13,6 +13,7 @@ Plugin 'sjbach/lusty'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
 Plugin 'bling/vim-airline'
+Plugin 'kien/ctrlp.vim'
 
 Plugin 'vimoutliner/vimoutliner'
 
