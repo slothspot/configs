@@ -9,11 +9,10 @@ Plugin 'tpope/vim-sensible'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
-Plugin 'sjbach/lusty'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
 Plugin 'bling/vim-airline'
-Plugin 'kien/ctrlp.vim'
+Plugin 'Shougo/unite.vim'
 
 Plugin 'vimoutliner/vimoutliner'
 
@@ -30,8 +29,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
 " Themes
-Plugin 'Lucius'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'whatyouhide/vim-gotham'
 
 " OSX specific
@@ -54,8 +51,6 @@ set hidden
 
 syntax enable
 set t_Co=256
-"set background=light
-"colorscheme solarized
 colorscheme gotham
 set guifont=Anonymous\ Pro\ 12
 
@@ -81,8 +76,7 @@ set nowrap
 
 let mapleader=","
 
-nmap <Leader>be :LustyBufferExplorer<CR>
-nmap <Leader>bg :LustyBufferGrep<CR>
+nmap <Leader>be :Unite -quick-match buffer<CR>
 
 nmap <Leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
@@ -92,8 +86,6 @@ nmap <Leader>a ggVG
 autocmd BufReadPost * if line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 let g:session_autosave = 'no'
-
-let g:EclimCompletionMethod = 'omnifunc'
 
 set autoread
 set noerrorbells
@@ -108,3 +100,9 @@ let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='gotham'
+
+let g:unite_enable_start_insert = 1
+let g:unite_split_rule = "botright"
+let g:unite_force_overwrite_statusline = 0
+let g:unite_winheight = 10
+
