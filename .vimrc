@@ -15,14 +15,18 @@ Plugin 'bling/vim-airline'
 Plugin 'Shougo/unite.vim'
 
 Plugin 'vimoutliner/vimoutliner'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
+" AsciiDoc
+Plugin 'dahu/vimple'
+Plugin 'dahu/Asif'
+Plugin 'vim-scripts/SyntaxRange'
+Plugin 'dahu/vim-asciidoc'
 
 " Programming
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'derekwyatt/vim-scala'
-
-" Markdown
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
 
 " Git
 Plugin 'tpope/vim-fugitive'
@@ -52,7 +56,7 @@ set hidden
 syntax enable
 set t_Co=256
 colorscheme gotham
-set guifont=Anonymous\ Pro\ 12
+set guifont=Anonymous\ Pro\ for\ Powerline\ 12
 
 set guioptions=acig
 set clipboard=unnamed
