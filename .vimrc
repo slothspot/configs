@@ -13,18 +13,11 @@ Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
 Plugin 'bling/vim-airline'
 Plugin 'Shougo/unite.vim'
-
 Plugin 'vimoutliner/vimoutliner'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-
-" AsciiDoc
-Plugin 'dahu/vimple'
-Plugin 'dahu/Asif'
-Plugin 'vim-scripts/SyntaxRange'
-Plugin 'dahu/vim-asciidoc'
 
 " Programming
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'derekwyatt/vim-scala'
 
@@ -81,6 +74,9 @@ set nowrap
 let mapleader=","
 
 nmap <Leader>be :Unite -quick-match buffer<CR>
+if has('macunix')
+    nmap <Leader>d :Dash<CR>
+endif
 
 nmap <Leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
@@ -110,3 +106,6 @@ let g:unite_split_rule = "botright"
 let g:unite_force_overwrite_statusline = 0
 let g:unite_winheight = 10
 
+if has('nvim')
+    tnoremap <Esc> <C-\><C-n>
+endif
