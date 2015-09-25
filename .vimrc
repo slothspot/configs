@@ -59,10 +59,11 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 nmap <F9> :NERDTreeToggle<CR>
 
 set expandtab
+set autoindent
 set smartindent
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
 set nobackup
 set nowb
 set backspace=2
