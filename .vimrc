@@ -11,7 +11,8 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Shougo/unite.vim'
 Plugin 'vimoutliner/vimoutliner'
 
@@ -20,13 +21,16 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'derekwyatt/vim-scala'
+Plugin 'ensime/ensime-vim'
 
 " Git
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " Themes
 Plugin 'whatyouhide/vim-gotham'
+Plugin 'NLKNguyen/papercolor-theme'
 
 " OSX specific
 if has("macunix")
@@ -48,8 +52,9 @@ set hidden
 
 syntax enable
 set t_Co=256
-colorscheme gotham
-set guifont=Anonymous\ Pro\ for\ Powerline\ 12
+set background=light
+colorscheme PaperColor
+set guifont=Iosevka\ Regular\ 14
 
 set guioptions=acig
 set clipboard=unnamed
@@ -100,7 +105,7 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='gotham'
+let g:airline_theme='papercolor'
 
 let g:unite_enable_start_insert = 1
 let g:unite_split_rule = "botright"
@@ -109,4 +114,5 @@ let g:unite_winheight = 10
 
 if has('nvim')
     tnoremap <Esc> <C-\><C-n>
+    set termguicolors
 endif
