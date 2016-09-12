@@ -73,6 +73,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 alias grep='grep --color=auto'
 alias ll='ls -la -h --color=auto'
 alias ls='ls --color=auto -h'
+alias nvim='nvim -u $HOME/.vimrc'
 
 # Android related aliases
 alias alog='adb logcat'
