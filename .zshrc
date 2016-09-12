@@ -8,10 +8,6 @@ ZSH=$HOME/.oh-my-zsh
 DEFAULT_USER="dmitry"
 ZSH_THEME="afowler"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -30,7 +26,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(adb ant brew encode64 extract git gradle meteor rsync scala sbt ssh-agent sudo)
+plugins=(brew encode64 git rsync scala sbt ssh-agent sudo)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -56,7 +52,9 @@ zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select=2
-eval "$(dircolors -b ~/.dircolors)"
+#eval "$(dircolors -b ~/.dircolors)"
+export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
+export LS_COLORS=gxfxbEaEBxxEhEhBaDaCaD
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
@@ -71,8 +69,9 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # System aliases
 alias grep='grep --color=auto'
-alias ll='ls -la -h --color=auto'
-alias ls='ls --color=auto -h'
+#alias ll='ls -la -h --color=auto'
+#alias ls='ls --color=auto -h'
+alias lt='ls -t'
 alias nvim='nvim -u $HOME/.vimrc'
 
 # Android related aliases
@@ -106,4 +105,3 @@ alias gsub='git submodule'
 alias gsubu='git submodule update'
 
 source $HOME/.profile
-
