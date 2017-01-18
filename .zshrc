@@ -26,7 +26,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew encode64 git rsync scala sbt ssh-agent sudo)
+plugins=(encode64 git rsync scala sbt ssh-agent sudo)
 
 source $ZSH/oh-my-zsh.sh
 
