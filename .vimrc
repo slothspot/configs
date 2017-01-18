@@ -5,23 +5,30 @@ call vundle#rc()
 
 " General
 Plugin 'gmarik/vundle'
-Plugin 'tpope/vim-sensible'
+if !has('nvim')
+  Plugin 'tpope/vim-sensible'
+endif
+Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/denite.nvim'
 Plugin 'vimoutliner/vimoutliner'
+Plugin 'justinmk/vim-sneak'
 
 " Programming
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'ensime/ensime-vim'
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'Yggdroot/indentLine'
+Plugin 'zchee/deoplete-jedi'
+Plugin 'carlitux/deoplete-ternjs'
 
 " Git
 Plugin 'tpope/vim-fugitive'
@@ -51,9 +58,8 @@ set laststatus=2
 set hidden
 
 syntax enable
-set t_Co=256
-set background=light
 colorscheme PaperColor
+set background=light
 set guifont=Iosevka\ Regular\ 14
 
 set guioptions=acig
@@ -61,7 +67,10 @@ set clipboard=unnamed
 
 autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let NERDTreeHighlightCursorLine=1
+let NERDTreeShowHidden=1
 nmap <F9> :NERDTreeToggle<CR>
+nmap <F10> :NERDTreeFind<CR>
 
 set expandtab
 set autoindent
@@ -79,7 +88,7 @@ set nowrap
 
 let mapleader=","
 
-nmap <Leader>be :Unite -quick-match buffer<CR>
+nmap <Leader>o :Denite buffer file_rec<CR>
 if has('macunix')
     nmap <Leader>d :Dash<CR>
 endif
@@ -107,12 +116,20 @@ let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='papercolor'
 
-let g:unite_enable_start_insert = 1
-let g:unite_split_rule = "botright"
-let g:unite_force_overwrite_statusline = 0
-let g:unite_winheight = 10
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#auto_complete_start_length = 1
+let g:deoplete#omni#input_patterns = {}
+let g:deoplete#omni#input_patterns.scala = [ '[^. *\t]\.\w*', '[:\[,] ?\w*', '^import .*']
+let g:deoplete#omni#input_patterns.ocaml = '[.\w]+'
+let g:deoplete#sources#jedi#python_path = '/usr/local/bin/python3.6'
+let g:tern_request_timeout = 1
+let g:tern_show_signature_in_pum = '0'
+imap <expr> <TAB> pumvisible() ? '<C-n>' : '<TAB>'
+
+let g:opamshare = substitute(system('opam config var share'), '\n$', '', '''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim/"
+execute "autocmd FileType ocaml source " . g:opamshare . "/ocp-indent/vim/indent/ocaml.vim"
 
 if has('nvim')
     tnoremap <Esc> <C-\><C-n>
-    set termguicolors
 endif
