@@ -19,6 +19,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Shougo/denite.nvim'
 Plugin 'vimoutliner/vimoutliner'
 Plugin 'justinmk/vim-sneak'
+Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/limelight.vim'
 
 " Programming
 Plugin 'SirVer/ultisnips'
@@ -126,10 +128,9 @@ let g:tern_request_timeout = 1
 let g:tern_show_signature_in_pum = '0'
 imap <expr> <TAB> pumvisible() ? '<C-n>' : '<TAB>'
 
-let g:opamshare = substitute(system('opam config var share'), '\n$', '', '''')
-execute "set rtp+=" . g:opamshare . "/merlin/vim/"
-execute "autocmd FileType ocaml source " . g:opamshare . "/ocp-indent/vim/indent/ocaml.vim"
-
 if has('nvim')
     tnoremap <Esc> <C-\><C-n>
 endif
+
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
