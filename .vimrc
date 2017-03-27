@@ -91,6 +91,7 @@ set nowrap
 let mapleader=","
 
 nmap <Leader>o :Denite buffer file_rec<CR>
+nmap <Leader>g :Denite grep "" !<CR>
 if has('macunix')
     nmap <Leader>d :Dash<CR>
 endif
