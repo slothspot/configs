@@ -92,6 +92,21 @@ let mapleader=","
 
 nmap <Leader>o :Denite buffer file_rec<CR>
 nmap <Leader>g :Denite grep "" !<CR>
+call denite#custom#map(
+      \ 'insert',
+      \ '<C-j>',
+      \ '<denite:move_to_next_line>',
+      \ 'noremap'
+      \)
+call denite#custom#map(
+      \ 'insert',
+      \ '<C-k>',
+      \ '<denite:move_to_previous_line>',
+      \ 'noremap'
+      \)
+call denite#custom#source('file_rec', 'matchers', ['matcher_ignore_globs'])
+call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
+      \ [ '.git/', 'target/', '.idea/', '.DS_Store'])
 if has('macunix')
     nmap <Leader>d :Dash<CR>
 endif
