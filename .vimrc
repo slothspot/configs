@@ -1,51 +1,55 @@
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/
+call plug#begin('~/.vim/bundle')
 
 " General
-Plugin 'gmarik/vundle'
 if !has('nvim')
-  Plugin 'tpope/vim-sensible'
+  Plug 'tpope/vim-sensible'
 endif
-Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-"Plugin 'scrooloose/syntastic'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-session'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'Shougo/denite.nvim'
-Plugin 'vimoutliner/vimoutliner'
-Plugin 'justinmk/vim-sneak'
-Plugin 'junegunn/goyo.vim'
-Plugin 'junegunn/limelight.vim'
+Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+"Plug 'scrooloose/syntastic'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-session'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'Shougo/denite.nvim'
+Plug 'vimoutliner/vimoutliner'
+Plug 'justinmk/vim-sneak'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 
 " Programming
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'ensime/ensime-vim'
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'Yggdroot/indentLine'
-Plugin 'zchee/deoplete-jedi'
-Plugin 'carlitux/deoplete-ternjs'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'derekwyatt/vim-scala'
+Plug 'Yggdroot/indentLine'
+Plug 'zchee/deoplete-jedi'
+Plug 'sbdchd/neoformat'
+Plug 'autozimu/LanguageClient-neovim', {
+  \ 'branch' : 'next',
+  \ 'do' : 'bash install.sh',
+  \ }
+Plug 'Shougo/deoplete.nvim', { 'do' : 'UpdateRemotePlugins' }
 
 " Git
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Themes
-Plugin 'whatyouhide/vim-gotham'
-Plugin 'NLKNguyen/papercolor-theme'
+Plug 'whatyouhide/vim-gotham'
+Plug 'NLKNguyen/papercolor-theme'
 
 " OSX specific
 if has("macunix")
-    Plugin 'rizzatti/funcoo.vim'
-    Plugin 'rizzatti/dash.vim'
+    Plug 'rizzatti/funcoo.vim'
+    Plug 'rizzatti/dash.vim'
 endif
+
+call plug#end()
 
 filetype plugin indent on
 
@@ -134,12 +138,15 @@ let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='papercolor'
 
+set completeopt+=noselect
+
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_start_length = 1
 let g:deoplete#omni#input_patterns = {}
 let g:deoplete#omni#input_patterns.scala = [ '[^. *\t]\.\w*', '[:\[,] ?\w*', '^import .*']
-let g:deoplete#omni#input_patterns.ocaml = '[.\w]+'
+let g:deoplete#omni#input_patterns.ocaml = '[^. *\t]\.\w*|\s\w*|#'
 let g:deoplete#sources#jedi#python_path = '/usr/local/bin/python3.6'
+
 let g:tern_request_timeout = 1
 let g:tern_show_signature_in_pum = '0'
 imap <expr> <TAB> pumvisible() ? '<C-n>' : '<TAB>'
@@ -150,3 +157,12 @@ endif
 
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+
+let g:opamshare = substitute(system('opam config var share'), '\n$', '', '''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
+execute "set rtp+=" . g:opamshare . "/ocp-indent/vim"
+
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+augroup END

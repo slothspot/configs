@@ -19,7 +19,19 @@ if [ -d "/usr/local/bin" ]; then
     PATH="/usr/local/bin:$PATH"
 fi
 
+#Add Python3.6 local bin to path on OSX
+if [ -d "$HOME/Library/Python/3.6/bin" ] ; then
+  PATH="$HOME/Library/Python/3.6/bin:$PATH"
+fi
+
+#Add Ruby/Gem local bin to path os OSX
+if [ -d "$HOME/.gem/ruby/2.5.0/bin" ] ; then
+  PATH="$HOME/.gem/ruby/2.5.0/bin:$PATH"
+fi
+
 export PATH="$PATH"
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+export EDITOR=nvim

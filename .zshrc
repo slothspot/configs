@@ -26,7 +26,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(encode64 git rsync scala sbt ssh-agent sudo)
+plugins=(docker encode64 git rsync scala sbt ssh-agent sudo)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -43,8 +43,8 @@ unsetopt nomatch
 bindkey -e
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
 zstyle ':completion:*' auto-description 'specify: %d'
@@ -105,3 +105,6 @@ alias gsub='git submodule'
 alias gsubu='git submodule update'
 
 source $HOME/.profile
+
+# opam configuration
+test -r /Users/dmelnychenko/.opam/opam-init/init.zsh && . /Users/dmelnychenko/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
